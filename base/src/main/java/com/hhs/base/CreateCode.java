@@ -3,10 +3,8 @@ package com.hhs.base;
 import com.hhs.gencode.Build;
 
 public class CreateCode {
-
-	public static void main(String[] args) {
-
-		/** ====================================================== **/
+	public static void main(String[] args)
+	{
 		/*
 		 * 生成选项 dao,s,c,add,update,list ，null则全部生成
 		 * ======================================================
@@ -21,5 +19,4 @@ public class CreateCode {
 			e.printStackTrace();
 		}
 	}
-
 }

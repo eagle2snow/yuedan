@@ -30,7 +30,6 @@ import org.hibernate.transform.Transformers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import com.hhs.base.enums.QueryObjEnum;
 import com.hhs.base.model.Model;
 import com.hhs.base.query.ConObj;
 import com.hhs.base.query.QueryObj;
@@ -670,15 +669,7 @@ public class BaseDao<T extends Model, ID extends Serializable> {
         }
         if (n != 0)
             criteria.setMaxResults(n);
-        if (queryObj.getSortMap().size() != 0) {
-            for (Entry<String, QueryObjEnum> entry : queryObj.getSortMap().entrySet()) {
-                if (entry.getValue().name().equals("desc"))
-                    criteria.addOrder(Order.desc(entry.getKey()));
-                else if (entry.getValue().name().equals("asc"))
-                    criteria.addOrder(Order.asc(entry.getKey()));
-            }
-        } else
-            criteria.addOrder(Order.desc("id"));
+        criteria.addOrder(Order.desc("id"));
         if (queryObj.getAliasSet().size() != 0)
             queryObj.getAliasSet().forEach(q -> criteria.createAlias(q, q));
         return criteria;

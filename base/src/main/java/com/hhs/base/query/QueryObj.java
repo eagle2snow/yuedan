@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import com.hhs.base.enums.QueryObjEnum;
 
 public class QueryObj {
 	// 查询条件 相等
@@ -27,8 +26,6 @@ public class QueryObj {
 	private List<Map<String, Object>> lkMap = new ArrayList<>();
 	// 返回查询属性集
 	private List<String> reList = new ArrayList<>();
-	// 排序
-	private Map<String, QueryObjEnum> sortMap = new HashMap<>();
 	//关联
 	private Set<String> aliasSet = new HashSet<>();
 	
@@ -66,10 +63,6 @@ public class QueryObj {
 
 	public List<Map<String, ConObj>> getBtMap() {
 		return btMap;
-	}
-	
-	public Map<String, QueryObjEnum> getSortMap() {
-		return sortMap;
 	}
 	
 	public List<Map<String, Object>> getLkMap() {
@@ -129,11 +122,6 @@ public class QueryObj {
 		Map<String,Object> map = new HashMap<>();
 		map.put(p, v);
 		this.lkMap.add(map);
-	}
-
-	public void setSortMap(String p, QueryObjEnum v) {
-		alias(p);
-		this.sortMap.put(p, v);
 	}
 	
 	private void alias(String s){
