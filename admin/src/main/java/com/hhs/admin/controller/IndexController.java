@@ -1,4 +1,4 @@
-package com.hhs.controller;
+package com.hhs.admin.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -13,10 +13,7 @@ import com.hhs.service.sys.LoginLogService;
 import com.hhs.service.sys.ResService;
 import com.hhs.service.sys.UserResService;
 import com.hhs.service.sys.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +25,16 @@ import com.hhs.base.model.sys.User;
 import com.hhs.base.model.sys.UserRes;
 import com.hhs.utils.IPUtil;
 import com.hhs.utils.StringUtil;
+
+@Controller
+@RequestMapping("/")
+class LoginController {
+    @RequestMapping("/")
+    String login()
+    {
+        return "admin/login";
+    }
+}
 
 @Controller
 @RequestMapping("/admin")

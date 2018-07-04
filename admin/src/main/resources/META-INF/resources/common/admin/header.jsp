@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <header class="main-header">
-	<a href="/admin/index.html" class="logo"> <span class="logo-mini">竹语后台管理系统</span>
-		<span class="logo-lg">竹语后台管理系统</span>
+	<a href="/admin/index.html" class="logo"> <span class="logo-mini">新项目后台管理系统</span>
+		<span class="logo-lg">新项目后台管理系统</span>
 	</a>
 
 	<nav class="navbar navbar-static-top" role="navigation">

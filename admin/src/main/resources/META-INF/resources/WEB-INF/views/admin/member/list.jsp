@@ -89,16 +89,13 @@
 											<td>${model.id}</td>
 											
 											 <th>${model.name}</th>
-											
-<!-- 											1：竹语游客 2：普通会员 3：业务经理 4：城市经理 5：合作伙伴 -->
+
 											 <th>
-											 	
 											 	${model.level eq 1?'竹语游客':""}
 											 	${model.level eq 2?'普通会员':""}
 											 	${model.level eq 3?'业务经理':""}
 											 	${model.level eq 4?'城市经理':""}
 											 	${model.level eq 5?'合作伙伴':""}
-											 	
 											 </th>
 											
 											 <th>${model.gender eq 1?'男':(model.gender eq 2?'女':'')}</th>
