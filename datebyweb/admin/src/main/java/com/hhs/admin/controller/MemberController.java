@@ -20,12 +20,10 @@ import com.hhs.base.model.Member;
 import com.hhs.base.query.Page;
 import com.hhs.utils.StringUtil;
 
-/**
- * 后台用户操作
- */
+
 @Controller
 @RequestMapping("/admin/member/")
-public class AdminMemberController {
+public class MemberController {
 
     private final static String path = "admin/member/";
 
@@ -33,48 +31,6 @@ public class AdminMemberController {
 
     @Resource
     private MemberService memberService;
-
-    //查看上家会员
-    @RequestMapping("upperRelate/{id}.htm")
-    public String getUpperRelate(ModelMap mm, @PathVariable Integer id)
-    {
-        Member myself = memberService.get(id);
-        if (myself == null)
-            logger.info("getUpperRelate::memberService.get(id) == null");
-        else {
-            Member upperRelate = memberService.getParent(myself, 1);
-            mm.addAttribute("upperRelate", upperRelate);
-        }
-        return path + "upperRelate";
-    }
-
-    //直推会员
-    @RequestMapping("directChild/{id}.htm")
-    public String getDirectChild(ModelMap mm, @PathVariable Integer id)
-    {
-        Member myself = memberService.get(id);
-        if (myself == null)
-            logger.info("getDirectChild::memberService.get(id) == null");
-        else {
-            List<Member> directChild = memberService.getChildren(myself, 1);
-            mm.addAttribute("directChild", directChild);
-        }
-        return path + "directChild";
-    }
-
-    //直系会员
-    @RequestMapping("allChild/{id}.htm")
-    public String getAllChild(ModelMap mm, @PathVariable Integer id)
-    {
-        Member myself = memberService.get(id);
-        if (myself == null)
-            logger.info("getAllChild::memberService.get(id) == null");
-        else {
-            List<Member> allChild = memberService.getIndirectChildren(myself);
-            mm.addAttribute("allChild", allChild);
-        }
-        return path + "allChild";
-    }
 
     @RequestMapping("add.htm")
     // @RequiresPermissions("admin:member:add")
