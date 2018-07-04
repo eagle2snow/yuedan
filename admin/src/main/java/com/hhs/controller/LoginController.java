@@ -1,4 +1,4 @@
-package com.hhs.admin.controller;
+package com.hhs.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

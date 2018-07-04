@@ -1,4 +1,4 @@
-package com.hhs.admin.controller;
+package com.hhs.controller;
 
 import java.util.List;
 import java.util.Map;

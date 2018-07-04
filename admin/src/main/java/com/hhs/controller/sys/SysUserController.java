@@ -1,4 +1,4 @@
-package com.hhs.admin.controller.sys;
+package com.hhs.controller.sys;
 
 import java.util.HashMap;
 import java.util.List;
