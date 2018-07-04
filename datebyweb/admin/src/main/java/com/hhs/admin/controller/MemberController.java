@@ -1,4 +1,4 @@
-package com.hhs.controller;
+package com.hhs.admin.controller;
 
 import java.util.*;
 

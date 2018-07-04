@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>竹语后台管理系统</title>
+<title>新项目管理系统</title>
 
 
 <%@ include file="/common/admin/head.jsp"%>

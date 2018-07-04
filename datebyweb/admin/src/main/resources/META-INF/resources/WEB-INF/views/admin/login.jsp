@@ -22,7 +22,7 @@
 				<form action="" method="post" id="form">
 					<div class="panel loginbox">
 						<div class="text-center margin-big padding-big-top">
-							<h1>漓江竹语后台管理中心</h1>
+							<h1>新项目管理中心</h1>
 						</div>
 						<div class="panel-body"
 							style="padding: 30px; padding-bottom: 10px; padding-top: 10px;">
