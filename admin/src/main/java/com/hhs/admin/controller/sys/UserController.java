@@ -1,4 +1,4 @@
-package com.hhs.controller.sys;
+package com.hhs.admin.controller.sys;
 
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +36,7 @@ import com.hhs.utils.StringUtil;
  */
 @Controller
 @RequestMapping("/admin/sys/user/")
-public class SysUserController {
+public class UserController {
 
     private final static String path = "admin/sys/user/";
 
@@ -325,17 +325,6 @@ public class SysUserController {
             map.put("status", "no");
         }
         return map;
-    }
-
-    public static void main(String[] args)
-    {
-        SecureRandomNumberGenerator secureRandomNumberGenerator = new SecureRandomNumberGenerator();
-        String salt = secureRandomNumberGenerator.nextBytes().toHex();
-        // 组合username,两次迭代，对密码进行加密
-        String password_cipherText = new Md5Hash("admin", "admin" + salt, 2).toHex();
-        System.out.println(salt);
-        System.out.println(password_cipherText);
-
     }
 
 }
