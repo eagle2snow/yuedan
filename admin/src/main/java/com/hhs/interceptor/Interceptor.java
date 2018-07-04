@@ -19,11 +19,8 @@ import com.hhs.utils.IPUtil;
 import com.hhs.utils.StringUtil;
 import com.xiaoleilu.hutool.util.ArrayUtil;
 
-/**
- * 后台拦截器
- */
 @Component
-public class AdminInterceptor implements HandlerInterceptor {
+public class Interceptor implements HandlerInterceptor {
 
     @Resource
     private OptLogService optLogService;
