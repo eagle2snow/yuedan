@@ -13,7 +13,7 @@ import com.hhs.base.consts.Const;
 
 public class WeixinPayApi {
 
-	private static WxPayH5Config wxPayH5Config;
+	private static volatile WxPayH5Config wxPayH5Config;
 
 	private WeixinPayApi() {
 	}
@@ -41,24 +41,6 @@ public class WeixinPayApi {
 		return wxPayH5Config;
 	}
 
-	/**
-	 * <p>
-	 * 描述:发起微信支付
-	 * </p>
-	 * 
-	 * @author 灰灰
-	 * @param orderNo
-	 *            订单号
-	 * @param orderName
-	 *            订单名称
-	 * @param amount
-	 *            支付金额（元）
-	 * @param openid
-	 *            当前支付人的openid
-	 * @date 2018年5月7日
-	 * 
-	 * @version 1.0
-	 */
 	public static PayResponse pay(String orderNo, String orderName, BigDecimal amount, String openid, String domain)
 			throws BestPayException {
 		PayRequest payRequest = new PayRequest();
@@ -76,5 +58,4 @@ public class WeixinPayApi {
 		bestPayService.setWxPayH5Config(getWxPayH5Config(domain));
 		return bestPayService;
 	}
-
 }
