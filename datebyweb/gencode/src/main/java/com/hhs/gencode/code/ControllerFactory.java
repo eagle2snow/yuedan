@@ -38,7 +38,6 @@ public class ControllerFactory {
         String servicePackage = packageName.replace("admin", "service").replace(".controller", "");
         String path = cl.getName().replace("base", "admin").replaceAll("com.hhs.", "").replaceAll("model.", "").toLowerCase()
                 .replaceAll("\\.", "\\/") + "/";
-        String view = "app/" + path;
 
         String perm = cl.getName().replaceAll("com.hhs.", "").replaceAll("model.", "").toLowerCase().replaceAll("\\.", ":");
         perm = perm.replaceAll("base", "admin");
@@ -52,7 +51,6 @@ public class ControllerFactory {
         map.put("updatePerm", updatePerm);
         map.put("deletePerm", deletePerm);
         map.put("path", path);
-        map.put("view", view);
         map.put("controllerName", cl.getSimpleName());
 
         map.put("package", packageName);
