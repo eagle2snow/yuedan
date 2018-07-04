@@ -37,7 +37,7 @@ public class Member extends Model {
 	private String mobile;
 
 	@FormField(type = FieldType.NUMBER, label = "等级")
-	private Integer level = 1; // 1：竹语游客 2：普通会员 3：业务经理 4：城市经理 5：合作伙伴
+	private Integer level = 1;
 
 	@FormField(type = FieldType.RADIO, label = "性别", data = "1|男,2|女,0|不详")
 	private Integer gender = 0;
