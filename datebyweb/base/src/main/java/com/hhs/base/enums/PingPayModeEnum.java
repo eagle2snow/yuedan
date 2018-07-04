@@ -12,7 +12,7 @@ public enum PingPayModeEnum {
 
 	private String name;
 
-	private PingPayModeEnum(String name) {
+	PingPayModeEnum(String name) {
 		this.name = name;
 	}
 

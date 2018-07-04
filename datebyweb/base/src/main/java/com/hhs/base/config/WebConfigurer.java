@@ -3,10 +3,10 @@ package com.hhs.base.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Component
-class WebConfigurer extends WebMvcConfigurerAdapter {
+class WebConfigurer implements WebMvcConfigurer {
 
 	@Value("${file.root.path}")
 	private String fileRealPath;
