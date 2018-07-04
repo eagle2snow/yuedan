@@ -46,33 +46,27 @@ public class ViewAdderFactory {
         String entityPackage = this.getCl().getName();
         String entitySimpleName = this.getCl().getSimpleName();
 
-        String viewPath = entityPackage;
-        String tempView = viewPath.substring(viewPath.lastIndexOf("."), viewPath.length());
-        viewPath = viewPath.replace(tempView, "");
-        String tempView2 = viewPath.substring(viewPath.lastIndexOf("."), viewPath.length());
-        viewPath = (tempView2 + StringUtil.firstLetterToLowercase(tempView)).replaceFirst("\\.", "").replace(".", "\\");
-
-        List<FieldAnnotation> list = FieldAnnotationUtil.list(getCl());
+       List<FieldAnnotation> list = FieldAnnotationUtil.list(getCl());
 
         map.put("list", list);
         map.put("package", entityPackage.replaceAll("model", "dao").replaceAll("." + entitySimpleName, ""));
         map.put("entityPackage", entityPackage);
         map.put("entitySimpleName", entitySimpleName);
-                                                                                  //这里要根据svn路径看是否加hhs-base
-        String projectJavaDir = System.getProperty("user.dir") + File.separator + "hhs-base\\src" + File.separator + "main"
-                + File.separator + "webapp" + File.separator + "WEB-INF" + File.separator + "views" + File.separator;
-        String outPath = projectJavaDir + "admin\\" + viewPath;
-                                                                            //这里要根据svn路径看是否加hhs-base
-        String tplPath = System.getProperty("user.dir") + File.separator + "hhs-base\\src" + File.separator + "main"
-                + File.separator + "java" + File.separator + "com\\gm\\gencode\\tpl\\";
-        tplPath = tplPath.replace("hhs-base", "hhs-gencode");
+
+        String projectJavaDir = System.getProperty("user.dir") + File.separator + "base\\src" + File.separator + "main"
+                + File.separator + "resources\\META-INF\\resources\\WEB-INF\\views" + File.separator;
+        String outPath = projectJavaDir + "admin\\" + StringUtil.firstLetterToLowercase(entitySimpleName);
+
+        String tplPath = System.getProperty("user.dir") + File.separator + "base\\src" + File.separator + "main"
+                + File.separator + "java" + File.separator + "com\\hhs\\gencode\\tpl\\";
+        tplPath = tplPath.replace("base", "gencode");
         File tplFile = new File(tplPath);
 
         TemplateLoader templateLoader = new FileTemplateLoader(tplFile);
 
         Configuration cfg = new Configuration();
         cfg.setTemplateLoader(templateLoader);
-        outPath = outPath.replace("hhs-base", "hhs-main");
+        outPath = outPath.replace("base", "admin");
         File file = new File(outPath.toLowerCase());
         IOStreamUtil.mkDir(file);
         String fileName = outPath + File.separator + "add.jsp";
