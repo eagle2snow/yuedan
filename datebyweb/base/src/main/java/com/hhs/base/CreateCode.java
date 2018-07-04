@@ -1,5 +1,6 @@
 package com.hhs.base;
 
+import com.hhs.base.model.Foo;
 import com.hhs.base.model.sys.LoginLog;
 import com.hhs.gencode.Build;
 
@@ -17,7 +18,7 @@ public class CreateCode {
 		// Build.buildCode(AutoMsgType.class, null);
 		// Build.buildCode(TestTime.class, "update");
 		try {
-			Build.buildCode(LoginLog.class, "c");
+			Build.buildCode(Foo.class, null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
