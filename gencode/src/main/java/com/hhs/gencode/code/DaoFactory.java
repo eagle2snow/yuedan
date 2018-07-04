@@ -33,12 +33,12 @@ public class DaoFactory {
 
         map.put("package", daoPackage);
         map.put("entityPackage", cl.getName());
-        map.put("className", className);                                          // 这里要根据svn路径看是否加hhs-base
-        String projectJavaDir = System.getProperty("user.dir") + File.separator + "hhs-base\\src" + File.separator + "main"
+        map.put("className", className);
+        String projectJavaDir = System.getProperty("user.dir") + File.separator + "base\\src" + File.separator + "main"
                 + File.separator + "java" + File.separator;
         String outPath = (projectJavaDir + daoPackage.replaceAll("\\.", "\\\\")) + File.separator;
         outPath.replace("base", "");
-        File tplFile = new File(projectJavaDir.replace("hhs-base", "hhs-gencode") + "com\\gm\\gencode\\tpl\\");
+        File tplFile = new File(projectJavaDir.replace("base", "gencode") + "com\\hhs\\gencode\\tpl\\");
 
         TemplateLoader templateLoader = new FileTemplateLoader(tplFile);
 

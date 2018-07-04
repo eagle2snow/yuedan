@@ -36,11 +36,11 @@ public class ControllerFactory {
         Map<String, Object> map = new HashMap<>();
         String packageName = cl.getPackage().getName().replace("base", "admin").replace("model", "controller");
         String servicePackage = packageName.replace("admin", "service").replace(".controller", "");
-        String path = cl.getName().replace("base", "admin").replaceAll("com.gm.", "").replaceAll("model.", "").toLowerCase()
+        String path = cl.getName().replace("base", "admin").replaceAll("com.hhs.", "").replaceAll("model.", "").toLowerCase()
                 .replaceAll("\\.", "\\/") + "/";
         String view = "app/" + path;
 
-        String perm = cl.getName().replaceAll("com.gm.", "").replaceAll("model.", "").toLowerCase().replaceAll("\\.", ":");
+        String perm = cl.getName().replaceAll("com.hhs.", "").replaceAll("model.", "").toLowerCase().replaceAll("\\.", ":");
         perm = perm.replaceAll("base", "admin");
         String addPerm = perm + ":add";
         String showPerm = perm + ":show";
@@ -82,15 +82,14 @@ public class ControllerFactory {
         map.put("addMap", addMap);
         map.put("services", services);
 
-        String workspace = System.getProperty("user.dir").replaceAll("hhs-base", "");
-        //workspace = workspace.substring(0, workspace.length() - 1);
-        String projectJavaDir = workspace + File.separator + "hhs-main" + File.separator + "src" + File.separator + "main"
+        String workspace = System.getProperty("user.dir").replaceAll("base", "");
+        String projectJavaDir = workspace + File.separator + "admin" + File.separator + "src" + File.separator + "main"
                 + File.separator + "java" + File.separator;
         String outPath = (packageName.replaceAll("\\.", "\\\\")) + File.separator;
         outPath = projectJavaDir + outPath;
 
-        projectJavaDir = projectJavaDir.replace("hhs-main", "hhs-gencode");
-        File tplFile = new File(projectJavaDir + "com\\gm\\gencode\\tpl\\");
+        projectJavaDir = projectJavaDir.replace("admin", "gencode");
+        File tplFile = new File(projectJavaDir + "com\\hhs\\gencode\\tpl\\");
 
         TemplateLoader templateLoader = new FileTemplateLoader(tplFile);
 
