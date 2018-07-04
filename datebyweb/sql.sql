@@ -31,7 +31,7 @@ CREATE TABLE `t_login_log` (
   PRIMARY KEY (`id`),
   KEY `FKcymi7qmui33qy2i3ecpw5oim9` (`user_id`),
   CONSTRAINT `FKcymi7qmui33qy2i3ecpw5oim9` FOREIGN KEY (`user_id`) REFERENCES `t_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_login_log
@@ -101,7 +101,7 @@ CREATE TABLE `t_opt_log` (
   PRIMARY KEY (`id`),
   KEY `FK56xgvnksn8373s5p4iuvx5e8r` (`user_id`),
   CONSTRAINT `FK56xgvnksn8373s5p4iuvx5e8r` FOREIGN KEY (`user_id`) REFERENCES `t_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_opt_log
@@ -127,20 +127,27 @@ CREATE TABLE `t_res` (
   PRIMARY KEY (`id`),
   KEY `FK9mxmyqk77m4ta5xfwfurf0tkh` (`parent_id`),
   CONSTRAINT `FK9mxmyqk77m4ta5xfwfurf0tkh` FOREIGN KEY (`parent_id`) REFERENCES `t_res` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_res
 -- ----------------------------
-INSERT INTO `t_res` VALUES ('1', null, '2018-05-17 17:54:08.834000', '1', '1', '顶级资源', '', '0', '1', '', '1');
+INSERT INTO `t_res` VALUES ('1', null, null, '1', '1', '顶级资源', null, '0', '0', null, null);
 INSERT INTO `t_res` VALUES ('2', null, '2018-04-13 13:57:40.075000', '1', '1', '会员中心', '', '0', '1', '', '1');
-INSERT INTO `t_res` VALUES ('8', null, '2018-04-13 14:08:38.504000', '2', '1', '商品分类', '', '0', '1', '', '1');
-INSERT INTO `t_res` VALUES ('18', null, '2018-04-13 14:27:52.177000', '2', '1', '订单管理', '', '0', '1', '', '1');
-INSERT INTO `t_res` VALUES ('22', null, '2018-04-13 14:30:59.790000', '2', '1', '评价管理', '', '0', '1', '', '1');
-INSERT INTO `t_res` VALUES ('28', null, '2018-04-13 14:53:43.424000', '2', '1', '分销中心', '', '0', '1', '', '1');
-INSERT INTO `t_res` VALUES ('32', null, '2018-04-13 15:08:40.162000', '2', '1', '财务管理', '', '0', '1', '', '1');
+INSERT INTO `t_res` VALUES ('3', null, '2018-04-14 17:52:22.665000', '1', '1', '会员管理', 'admin:member:show', '0', '1', '/admin/member/list/1/115.htm', '2');
 INSERT INTO `t_res` VALUES ('34', null, '2018-04-13 15:10:46.443000', '1', '1', '管理员中心', '', '0', '1', '', '1');
-INSERT INTO `t_res` VALUES ('44', null, '2018-04-16 09:25:20.904000', '2', '1', '会员服务', '', '0', '1', '', '1');
+INSERT INTO `t_res` VALUES ('35', null, '2018-04-13 15:11:43.358000', '1', '1', '管理员管理', 'admin:sys:user:show', '0', '1', '/admin/sys/user/list/1/15.htm', '34');
+INSERT INTO `t_res` VALUES ('36', null, '2018-04-13 15:12:12.382000', '1', '1', '添加管理员', 'admin:sys:user:add', '0', '2', '', '35');
+INSERT INTO `t_res` VALUES ('37', null, '2018-04-13 15:12:51.566000', '1', '1', '修改管理员信息', 'admin:sys:user:update', '0', '2', '', '35');
+INSERT INTO `t_res` VALUES ('38', null, '2018-04-13 15:13:07.038000', '1', '1', '删除管理员', 'admin:sys:user:delete', '0', '2', '', '35');
+INSERT INTO `t_res` VALUES ('39', null, '2018-04-13 15:14:26.077000', '1', '1', '资源管理', 'admin:sys:res:show', '0', '1', '/admin/sys/res/list/1/15.htm', '34');
+INSERT INTO `t_res` VALUES ('40', null, '2018-04-13 15:15:09.940000', '1', '1', '添加资源', 'admin:sys:res:add', '0', '2', '', '39');
+INSERT INTO `t_res` VALUES ('41', null, '2018-04-13 15:15:26.382000', '1', '1', '修改资源', 'admin:sys:res:update', '0', '2', '', '39');
+INSERT INTO `t_res` VALUES ('42', null, '2018-04-13 15:16:08.348000', '1', '1', '删除资源', 'admin:sys:res:delete', '0', '2', '', '39');
+INSERT INTO `t_res` VALUES ('44', null, '2018-04-16 09:25:20.904000', '1', '1', '会员服务', '', '0', '1', '', '1');
+INSERT INTO `t_res` VALUES ('45', null, '2018-04-13 16:27:16.431000', '1', '1', '设置管理员权限', 'admin:user:setRes', '0', '2', '', '35');
+INSERT INTO `t_res` VALUES ('46', null, '2018-04-13 17:12:21.693000', '1', '1', '查看登录日志', 'admin:sys:loginlog:show', '0', '1', '/admin/sys/loginlog/list/1/15.htm', '34');
+INSERT INTO `t_res` VALUES ('47', null, '2018-04-13 17:12:06.969000', '1', '1', '查看操作日志', 'admin:sys:optlog:show', '0', '1', '/admin/sys/optlog/list/1/15.htm', '34');
 
 -- ----------------------------
 -- Table structure for `t_user`
@@ -165,7 +172,7 @@ CREATE TABLE `t_user` (
   `sign` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user
@@ -190,7 +197,7 @@ CREATE TABLE `t_user_res` (
   KEY `FKqfnq1bbob94mdme33ftbqen9j` (`user_id`),
   CONSTRAINT `FK9jnp8x22r714llhds35oe91pe` FOREIGN KEY (`res_id`) REFERENCES `t_res` (`id`),
   CONSTRAINT `FKqfnq1bbob94mdme33ftbqen9j` FOREIGN KEY (`user_id`) REFERENCES `t_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1459 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user_res
