@@ -31,9 +31,7 @@ import com.hhs.utils.StringUtil;
 
 @Controller
 @RequestMapping("/admin")
-public class AdminIndexController {
-
-    private static final Logger logger = LoggerFactory.getLogger(AdminIndexController.class);
+public class IndexController {
 
     private final static String path = "/admin/";
     @Resource
@@ -49,12 +47,6 @@ public class AdminIndexController {
     public String login()
     {
         return path + "login";
-    }
-
-    @GetMapping("/aplogin")
-    public String aplogin()
-    {
-        return path + "aplogin";
     }
 
     @PostMapping("/loginAction")
@@ -120,11 +112,4 @@ public class AdminIndexController {
         session.invalidate();
         return "redirect:/admin/login";
     }
-
-    @GetMapping({"", "/", "/index", "index.htm", "index.html"})
-    public String index(ModelMap map, HttpSession session)
-    {
-        return path + "index";
-    }
-
 }
