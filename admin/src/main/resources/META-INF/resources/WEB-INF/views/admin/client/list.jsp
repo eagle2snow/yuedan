@@ -1,19 +1,19 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-<title>客户信息列表 </title>
+    <title>客户信息列表 </title>
 
-    <%@ include file="/common/admin/head.jsp"%>
+    <%@ include file="/common/admin/head.jsp" %>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-    <%@ include file="/common/admin/header.jsp"%>
-    <%@ include file="/common/admin/left.jsp"%>
+    <%@ include file="/common/admin/header.jsp" %>
+    <%@ include file="/common/admin/left.jsp" %>
     <div class="content-wrapper">
         <!-- Main content -->
         <section class="content">
@@ -23,7 +23,7 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-							<h3 class="box-title">客户信息列表</h3>
+                            <h3 class="box-title">客户信息列表</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box">
@@ -68,23 +68,23 @@
                                     <tr>
                                         <th width="25"><input name="checkAll" class="minimal" type="checkbox"></th>
                                         <th width="40">ID</th>
-											<th>名称</th>
-											<th>头像地址</th>
-											<th>性别</th>
-											<th>等级</th>
-											<th>积分</th>
-											<th>经度</th>
-											<th>纬度</th>
-											<th>手机号</th>
-											<th>微信号</th>
-											<th>微博号</th>
-											<th>是否展示微博号</th>
-											<th>简介</th>
-											<th>赞</th>
-											<th>访客</th>
-											<th>活跃度</th>
-											<th>授权</th>
-											<th>认证</th>
+                                        <th>姓名</th>
+                                        <th>头像地址</th>
+                                        <th>性别</th>
+                                        <th>等级</th>
+                                        <th>积分</th>
+                                        <th>经度</th>
+                                        <th>纬度</th>
+                                        <th>手机号</th>
+                                        <th>微信号</th>
+                                        <th>微博号</th>
+                                        <th>是否展示微博号</th>
+                                        <th>简介</th>
+                                        <th>赞</th>
+                                        <th>访客</th>
+                                        <th>活跃度</th>
+                                        <th>授权</th>
+                                        <th>认证</th>
                                         <th width="130">创建时间</th>
                                         <th width="100">状态</th>
                                         <th width="100">操作</th>
@@ -98,43 +98,42 @@
                                                        value="${model.id}"></td>
                                             <td>${model.id}</td>
 
-											 <th>${model.name}</th>
+                                            <th>${model.name}</th>
 
 
-											<th class="text-center"><img src='${model.iocUrl}'
+                                            <th class="text-center"><img src='${model.iocUrl}'
                                                                          style="width: 50pxp; height: 50px;"/></th>
 
 
+                                            <th>${model.gender}</th>
 
-											 <th>${model.gender}</th>
+                                            <th>${model.level}</th>
 
-											 <th>${model.level}</th>
+                                            <th>${model.integral}</th>
 
-											 <th>${model.integral}</th>
+                                            <th>${model.longitude}</th>
 
-											 <th>${model.longitude}</th>
+                                            <th>${model.latitude}</th>
 
-											 <th>${model.latitude}</th>
+                                            <th>${model.mobile}</th>
 
-											 <th>${model.mobile}</th>
+                                            <th>${model.wechat}</th>
 
-											 <th>${model.wechat}</th>
+                                            <th>${model.microblog}</th>
 
-											 <th>${model.microblog}</th>
+                                            <th>${model.statusMicroblog}</th>
 
-											 <th>${model.statusMicroblog}</th>
+                                            <th>${model.profile}</th>
 
-											 <th>${model.profile}</th>
+                                            <th>${model.praise}</th>
 
-											 <th>${model.praise}</th>
+                                            <th>${model.visitor}</th>
 
-											 <th>${model.visitor}</th>
+                                            <th>${model.liveness}</th>
 
-											 <th>${model.liveness}</th>
+                                            <th>${model.auth}</th>
 
-											 <th>${model.auth}</th>
-
-											 <th>${model.authentication}</th>
+                                            <th>${model.authentication}</th>
 
                                             <td>
                                                 <javatime:format value="${model.createTime}"
@@ -176,9 +175,9 @@
             </div>
         </section>
     </div>
-    <%@ include file="/common/admin/footer.jsp"%>
-    <%@ include file="/common/admin/right.jsp"%>
-    <%@ include file="/common/admin/my_js.jsp"%>
+    <%@ include file="/common/admin/footer.jsp" %>
+    <%@ include file="/common/admin/right.jsp" %>
+    <%@ include file="/common/admin/my_js.jsp" %>
 
     <div class="control-sidebar-bg"></div>
 </div>
@@ -217,8 +216,8 @@
 
 
     function edit(id) {
-		
-				openPerRe("编辑客户信息", 90, 90, '${adp}update/' + id + '.htm');
+
+        openPerRe("编辑客户信息", 90, 90, '${adp}update/' + id + '.htm');
 
     }
 
