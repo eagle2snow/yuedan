@@ -81,7 +81,7 @@
 							icon : 6
 						});
 						$("#loginBtn").val("正在跳转...");
-						location.href = "/admin/member/list/1/115.htm";
+						location.href = "/admin/client/list/1/15.htm";
 					} else if (data.s == 2) {
 						$("#loginBtn").val("登录");
 						$("#password").val("");
