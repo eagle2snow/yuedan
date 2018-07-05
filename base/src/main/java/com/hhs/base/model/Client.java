@@ -80,13 +80,13 @@ public class Client extends Model{
     /**
      * 1:微信 2:QQ 3:微博  4:手机
      */
-    @FormField(type = FieldType.NUMBER, label = "授权")
-    private Integer auth ;
+    @FormField(type = FieldType.TEXTINPUT, label = "授权")
+    private String auth ;
 
     /**
      * 1:手机认证 2:身份证认证 3:支付宝认证 4:微信认证 5:微博认证 6:技能认证
      */
-    @FormField(type = FieldType.NUMBER, label = "认证")
-    private Integer authentication;
+    @FormField(type = FieldType.TEXTINPUT, label = "认证")
+    private String authentication;
 
 }
