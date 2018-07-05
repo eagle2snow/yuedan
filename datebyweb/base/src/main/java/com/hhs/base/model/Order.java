@@ -79,7 +79,7 @@ public class Order extends Model {
         return client;
     }
 
-    public void setMember(Client client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 }
