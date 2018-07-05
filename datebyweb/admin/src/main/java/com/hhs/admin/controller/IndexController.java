@@ -27,16 +27,6 @@ import com.hhs.utils.IPUtil;
 import com.hhs.utils.StringUtil;
 
 @Controller
-@RequestMapping("/")
-class LoginController {
-    @RequestMapping("/")
-    String login()
-    {
-        return "admin/login";
-    }
-}
-
-@Controller
 @RequestMapping("/admin")
 public class IndexController {
 
