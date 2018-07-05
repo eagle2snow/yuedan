@@ -30,6 +30,9 @@ public class ServiceClass extends Model {
 	@FormField(type = FieldType.PICTURE, label = "显示图片")
 	private String imgerPath;
 
+	@FormField(type = FieldType.PICTURELIST, label = "图片列表")
+	private String imgeListShow;
+
 	@FormField(label = "备注", type = FieldType.TEXTINPUT)
 	private String remarks;
 
@@ -83,5 +86,13 @@ public class ServiceClass extends Model {
 
 	public void setSort(Integer sort) {
 		this.sort = sort;
+	}
+
+	public String getImgeListShow() {
+		return imgeListShow;
+	}
+
+	public void setImgeListShow(String imgeListShow) {
+		this.imgeListShow = imgeListShow;
 	}
 }
