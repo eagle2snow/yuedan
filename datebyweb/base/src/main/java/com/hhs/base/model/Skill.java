@@ -19,7 +19,6 @@ import java.math.BigDecimal;
 @M("技能表")
 @Entity(name = "skill")
 @Table(name = "t_skill")
-@SuppressWarnings("serial")
 public class Skill extends Model {
 
     @FormField(type = FieldType.TEXTINPUT, label = "会员")
