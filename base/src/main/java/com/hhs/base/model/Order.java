@@ -21,7 +21,6 @@ import java.time.LocalDateTime;
 @M("订单表")
 @Entity(name = "order")
 @Table(name = "t_order")
-@SuppressWarnings("serial")
 public class Order extends Model {
 
     @FormField(type = FieldType.TEXTINPUT, label = "会员")
@@ -30,7 +29,7 @@ public class Order extends Model {
     @FormField(type = FieldType.NUMBER, label = "咨询类型(品类)")
     private Integer categoryId;
 
-    @FormField(type = FieldType.RADIO, label = "订单状态", data = "1|待应邀,2|已应邀,3|已成交,4|已过期")
+    @FormField(type = FieldType.RADIO, label = "订单状态", data = "1|待应邀,2|已应邀,3|已成交,4|已过期,5|订单进行中")
     private Integer statusOrder;
 
     @FormField(type = FieldType.RADIO, label = "支付状态", data = "1|未付款,2|已付定金,3|已确认定金,4|待确认全款,5|已申请退款,6|已驳回退款,5|已同意退款")
