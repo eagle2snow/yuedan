@@ -71,6 +71,12 @@ public class Client extends Model{
     private Integer visitor = 0;
 
     /**
+     * 保存访客ID 多个用英文逗号隔开
+     */
+    @FormField(type = FieldType.TEXTINPUT, label = "访客ID")
+    private String visitorId;
+
+    /**
      * 1:一般 2:还行 3:很高
      */
     @FormField(type = FieldType.NUMBER, label = "活跃度")
