@@ -2,6 +2,7 @@ package com.hhs.base.model;
 
 import com.hhs.gencode.annotation.FormField;
 import com.hhs.gencode.annotation.M;
+import com.hhs.gencode.util.DataNature;
 import com.hhs.gencode.util.FieldType;
 import lombok.Data;
 
@@ -21,7 +22,7 @@ import java.math.BigDecimal;
 @Table(name = "t_skill")
 public class Skill extends Model {
 
-    @FormField(type = FieldType.TEXTINPUT, label = "会员")
+    @FormField(type = FieldType.SELECT, label = "会员", dataNature = DataNature.MODEL, ds = Client.class)
     private Client client;
 
     @FormField(type = FieldType.NUMBER, label = "分类")
@@ -42,8 +43,27 @@ public class Skill extends Model {
     @FormField(type = FieldType.TEXTINPUT, label = "服务类型")
     private String type;
 
+    @FormField(type = FieldType.TEXTINPUT, label = "服务擅长")
+    private String adept;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "服务介绍")
+    private String introduce;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "教育经历")
+    private String educationId;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "工作经历")
+    private String workId;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "专业回答")
+    private String specialty;
+
+
+
     @FormField(type = FieldType.NUMBER, label = "服务价格")
     private BigDecimal serviceMoney = BigDecimal.ZERO;
+
+
 
     @FormField(type = FieldType.RADIO, label = "派单状态", data = "1|接受派单,2|不接派单")
     private Integer statusSendOrder;
@@ -51,8 +71,11 @@ public class Skill extends Model {
     @FormField(type = FieldType.RADIO, label = "应邀数")
     private Integer totalInvitation;
 
+
+
     @FormField(type = FieldType.RADIO, label = "审核状态", data = "1|待完善，2|审核中,3|已驳回,4|已通过")
     private Integer statusCheck;
+
 
     @ManyToOne
     public Client getClient() {
