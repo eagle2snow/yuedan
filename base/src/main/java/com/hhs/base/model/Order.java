@@ -3,6 +3,7 @@ package com.hhs.base.model;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.hhs.gencode.annotation.FormField;
 import com.hhs.gencode.annotation.M;
+import com.hhs.gencode.util.DataNature;
 import com.hhs.gencode.util.FieldType;
 import lombok.Data;
 
@@ -23,7 +24,7 @@ import java.time.LocalDateTime;
 @Table(name = "t_order")
 public class Order extends Model {
 
-    @FormField(type = FieldType.TEXTINPUT, label = "会员")
+    @FormField(type = FieldType.SELECT, label = "会员", dataNature = DataNature.MODEL, ds = Client.class)
     private Client client;
 
     @FormField(type = FieldType.NUMBER, label = "咨询类型(品类)")
@@ -66,9 +67,16 @@ public class Order extends Model {
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime appointmentTime;
 
+    @FormField(type = FieldType.TIME, label = "应邀时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime onInvitationTime;
+
     @FormField(type = FieldType.TIME, label = "结束时间")
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endTime;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "应邀优势")
+    private String advantage;
 
     @FormField(type = FieldType.TEXTINPUT, label = "备注")
     private String remarks;
