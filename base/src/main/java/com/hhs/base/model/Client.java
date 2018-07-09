@@ -11,7 +11,7 @@ import javax.persistence.Table;
 /**
  * @Auther: Eagle
  * @Date: 2018/7/4 14:52
- * @Description: 客户信息实体类
+ * @Description: 会员中心-客户信息实体类
  */
 @Data
 @M("客户信息")

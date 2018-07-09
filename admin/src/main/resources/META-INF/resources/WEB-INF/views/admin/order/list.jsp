@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>客户信息列表 </title>
+<title>订单表列表 </title>
 
     <%@ include file="/common/admin/head.jsp"%>
 
@@ -23,7 +23,7 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-							<h3 class="box-title">客户信息列表</h3>
+							<h3 class="box-title">订单表列表</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box">
@@ -69,22 +69,35 @@
                                         <th width="25"><input name="checkAll" class="minimal" type="checkbox"></th>
                                         <th width="40">ID</th>
 											<th>名称</th>
-											<th>头像地址</th>
-											<th>性别</th>
-											<th>等级</th>
-											<th>积分</th>
-											<th>经度</th>
-											<th>纬度</th>
-											<th>手机号</th>
-											<th>微信号</th>
-											<th>微博号</th>
-											<th>是否展示微博号</th>
-											<th>简介</th>
-											<th>赞</th>
-											<th>访客</th>
-											<th>访客ID</th>
-											<th>活跃度</th>
-											<th>授权</th>
+											<th>会员</th>
+											<th>咨询类型(品类)</th>
+											<th>订单状态</th>
+											<th>支付状态</th>
+											<th>性别要求</th>
+											<th>距离</th>
+											<th>订单号</th>
+											<th>服务类型</th>
+											<th>服务时间</th>
+											<th>诚意金</th>
+											<th>订单总价</th>
+											<th>支付方式</th>
+											<th>支付宝交易号</th>
+											<th>微信交易号</th>
+											<th>支付时间</th>
+											<th>预约时间</th>
+											<th>应邀时间</th>
+											<th>结束时间</th>
+											<th>应邀优势</th>
+											<th>付款时间</th>
+											<th>订单完成时间</th>
+											<th>是否已评价</th>
+											<th>评价时间</th>
+											<th>退款金额</th>
+											<th>退款理由</th>
+											<th>退款时间</th>
+											<th>拒绝退款</th>
+											<th>拒退时间</th>
+											<th>备注</th>
                                         <th width="130">创建时间</th>
                                         <th width="100">状态</th>
                                         <th width="100">操作</th>
@@ -101,40 +114,63 @@
 											 <th>${model.name}</th>
 
 
-											<th class="text-center"><img src='${model.iocUrl}'
-                                                                         style="width: 50pxp; height: 50px;"/></th>
+											 <th>${model.client.name}</th>
 
+											 <th>${model.categoryId}</th>
 
+											 <th>${model.statusOrder}</th>
+
+											 <th>${model.statusPay}</th>
 
 											 <th>${model.gender}</th>
 
-											 <th>${model.level}</th>
+											 <th>${model.distance}</th>
 
-											 <th>${model.integral}</th>
+											 <th>${model.orderNo}</th>
 
-											 <th>${model.longitude}</th>
+											 <th>${model.type}</th>
 
-											 <th>${model.latitude}</th>
+											 <th>${model.serviceTime}</th>
 
-											 <th>${model.mobile}</th>
+											 <th>${model.earnestMoney}</th>
 
-											 <th>${model.wechat}</th>
+											 <th>${model.totalMoney}</th>
 
-											 <th>${model.microblog}</th>
+											 <th>${model.payPathway}</th>
 
-											 <th>${model.statusMicroblog}</th>
+											 <th>${model.alipayNo}</th>
 
-											 <th>${model.profile}</th>
+											 <th>${model.wechatNo}</th>
 
-											 <th>${model.praise}</th>
+											 <th>${model.payTime}</th>
 
-											 <th>${model.visitor}</th>
+											 <th>${model.appointmentTime}</th>
 
-											 <th>${model.visitorId}</th>
+											 <th>${model.onInvitationTime}</th>
 
-											 <th>${model.liveness}</th>
+											 <th>${model.endTime}</th>
 
-											 <th>${model.auth}</th>
+											 <th>${model.advantage}</th>
+
+											 <th>${model.paymentTime}</th>
+
+											 <th>${model.finishTime}</th>
+
+											 <th>${model.appraise}</th>
+
+											 <th>${model.appraiseTime}</th>
+
+											 <th>${model.orderRefundTime}</th>
+
+											 <th>${model.refundReason}</th>
+
+											 <th>${model.refundTime}</th>
+
+											 <th>${model.rejectReason}</th>
+
+											 <th>${model.rejectTime}</th>
+
+											 <th>${model.remarks}</th>
 
                                             <td>
                                                 <javatime:format value="${model.createTime}"
@@ -218,7 +254,7 @@
 
     function edit(id) {
 		
-				openPerRe("编辑客户信息", 90, 90, '${adp}update/' + id + '.htm');
+				openPerRe("编辑订单表", 90, 90, '${adp}update/' + id + '.htm');
 
     }
 

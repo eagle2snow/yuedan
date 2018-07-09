@@ -3,7 +3,7 @@
 <html>
 
 <head>
-<title>客户信息新增 </title>
+<title>技能表新增 </title>
 
     <%@ include file="/common/admin/head.jsp"%>
     <%@ include file="/common/admin/datetimepic.jsp"%>
@@ -64,40 +64,90 @@
 
 
 
+
+
+
+
+
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">会员:</label>
+                          <div class="col-sm-8">
+											<select name="client.id" style="width: 100% !important;" class="form-control select2" id="client">
+                                      <c:forEach items="${clientList}" var="m">
+
+                              <option value="${m.id}">
+                                  ${m.name}
+													</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+
+
+
+
+
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">分类:</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control"
+                                               placeholder="分类" id="classesId" name="classesId"          />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">咨询类型(品类):</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control"
+                                               placeholder="咨询类型(品类)" id="categoryId" name="categoryId"          />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
 	                        <div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">头像地址:</label>
+                                    <label class="col-sm-2 control-label">技能相册:</label>
                                     <div class="col-sm-8">
 
 
-                                        <input class="file" type="file" id='iocUrl'> <input
-                                            name="iocUrl" id="iocUrl_input" type="hidden" />
-                                        <div style="overflow: hidden;" class="iocUrl"></div>
+                                        <input class="file" type="file" id='skillImagesUrl'> <input
+                                            name="skillImagesUrl" id="skillImagesUrl_input" type="hidden" />
+                                        <div style="overflow: hidden;" class="skillImagesUrl"></div>
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">密码:</label>
-                                    <div class="col-sm-8">
-                                        <input type="password" class="form-control"
-                                               placeholder="密码" id="password" name="password"          />
-                                    </div>
-                                </div>
-                            </div>
-
 
 
 
@@ -121,11 +171,186 @@
 
 								<div class="box-body">
                                   <div class="form-group">
-                                  <label class="col-sm-2 control-label">性别:</label>
+                                  <label class="col-sm-2 control-label">咨询对象:</label>
                           <div class="col-sm-8">
-											<label><input value="0" type="radio" class="minimal" name="gender">不详</label>
-											<label><input value="1" type="radio" class="minimal" name="gender">男</label>
-											<label><input value="2" type="radio" class="minimal" name="gender">女</label>
+											<label><input value="1" type="radio" class="minimal" name="statusAdvisory">单方需要咨询</label>
+											<label><input value="2" type="radio" class="minimal" name="statusAdvisory">双方需要咨询</label>
+										</div>
+									</div>
+								</div>
+
+
+
+							<div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">服务类型:</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="服务类型" id="type" name="type"           />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">服务擅长:</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="服务擅长" id="adept" name="adept"           />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">服务介绍:</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="服务介绍" id="introduce" name="introduce"           />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">教育经历:</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="教育经历" id="educationId" name="educationId"           />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">工作经历:</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="工作经历" id="workId" name="workId"           />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+							<div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">专业回答:</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control"
+                                               placeholder="专业回答" id="specialty" name="specialty"           />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">服务价格:</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control"
+                                               placeholder="服务价格" id="serviceMoney" name="serviceMoney"          />
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">派单状态:</label>
+                          <div class="col-sm-8">
+											<label><input value="1" type="radio" class="minimal" name="statusSendOrder">接受派单</label>
+											<label><input value="2" type="radio" class="minimal" name="statusSendOrder">不接派单</label>
 										</div>
 									</div>
 								</div>
@@ -136,21 +361,19 @@
 
 
 
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">等级:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="等级" id="level" name="level"          />
-                                    </div>
-                                </div>
-                            </div>
 
 
 
 
 
 
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">应邀数:</label>
+                          <div class="col-sm-8">
+										</div>
+									</div>
+								</div>
 
 
 
@@ -158,285 +381,22 @@
 
 
 
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">积分:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="积分" id="integral" name="integral"          />
-                                    </div>
-                                </div>
-                            </div>
 
 
 
 
 
 
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">经度:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="经度" id="longitude" name="longitude"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">纬度:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="纬度" id="latitude" name="latitude"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">手机号:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="手机号" id="mobile" name="mobile"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">微信号:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="微信号" id="wechat" name="wechat"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">微博号:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="微博号" id="microblog" name="microblog"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">是否展示微博号:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="是否展示微博号" id="statusMicroblog" name="statusMicroblog"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">简介:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="简介" id="profile" name="profile"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">赞:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="赞" id="praise" name="praise"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">访客:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="访客" id="visitor" name="visitor"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">访客ID:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="访客ID" id="visitorId" name="visitorId"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">活跃度:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="活跃度" id="liveness" name="liveness"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">授权:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="授权" id="auth" name="auth"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">审核状态:</label>
+                          <div class="col-sm-8">
+											<label><input value="1" type="radio" class="minimal" name="statusCheck">待完善，2</label>
+											<label><input value="3" type="radio" class="minimal" name="statusCheck">已驳回</label>
+											<label><input value="4" type="radio" class="minimal" name="statusCheck">已通过</label>
+										</div>
+									</div>
+								</div>
 
 
                         <div class="box-body">
@@ -503,8 +463,6 @@
                 });
 
 				 	var ue =  UE.getEditor('content');
-
-
 
 
 

@@ -3,7 +3,7 @@
 <html>
 
 <head>
-<title>客户信息新增 </title>
+<title>客户认证新增 </title>
 
     <%@ include file="/common/admin/head.jsp"%>
     <%@ include file="/common/admin/datetimepic.jsp"%>
@@ -64,24 +64,26 @@
 
 
 
-	                        <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">头像地址:</label>
-                                    <div class="col-sm-8">
-
-
-                                        <input class="file" type="file" id='iocUrl'> <input
-                                            name="iocUrl" id="iocUrl_input" type="hidden" />
-                                        <div style="overflow: hidden;" class="iocUrl"></div>
-                                    </div>
-                                </div>
-                            </div>
 
 
 
 
 
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">会员:</label>
+                          <div class="col-sm-8">
+											<select name="client.id" style="width: 100% !important;" class="form-control select2" id="client">
+                                      <c:forEach items="${clientList}" var="m">
 
+                              <option value="${m.id}">
+                                  ${m.name}
+													</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
+								</div>
 
 
 
@@ -90,13 +92,14 @@
 
 							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">密码:</label>
+                                    <label class="col-sm-2 control-label">手机号:</label>
                                     <div class="col-sm-8">
-                                        <input type="password" class="form-control"
-                                               placeholder="密码" id="password" name="password"          />
+                                        <input type="text" class="form-control"
+                                               placeholder="手机号" id="phoneNo" name="phoneNo"           />
                                     </div>
                                 </div>
                             </div>
+
 
 
 
@@ -121,27 +124,23 @@
 
 								<div class="box-body">
                                   <div class="form-group">
-                                  <label class="col-sm-2 control-label">性别:</label>
+                                  <label class="col-sm-2 control-label">身份证明:</label>
                           <div class="col-sm-8">
-											<label><input value="0" type="radio" class="minimal" name="gender">不详</label>
-											<label><input value="1" type="radio" class="minimal" name="gender">男</label>
-											<label><input value="2" type="radio" class="minimal" name="gender">女</label>
+											<label><input value="1" type="radio" class="minimal" name="identityType">身份证</label>
+											<label><input value="2" type="radio" class="minimal" name="identityType">护照</label>
+											<label><input value="3" type="radio" class="minimal" name="identityType">港澳通行证</label>
 										</div>
 									</div>
 								</div>
 
 
 
-
-
-
-
-                            <div class="box-body">
+							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">等级:</label>
+                                    <label class="col-sm-2 control-label">身份证号:</label>
                                     <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="等级" id="level" name="level"          />
+                                        <input type="text" class="form-control"
+                                               placeholder="身份证号" id="identityNo" name="identityNo"           />
                                     </div>
                                 </div>
                             </div>
@@ -149,68 +148,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">积分:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="积分" id="integral" name="integral"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">经度:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="经度" id="longitude" name="longitude"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">纬度:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="纬度" id="latitude" name="latitude"          />
-                                    </div>
-                                </div>
-                            </div>
 
 
 
@@ -222,10 +159,10 @@
 
 							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">手机号:</label>
+                                    <label class="col-sm-2 control-label">支付宝账号:</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control"
-                                               placeholder="手机号" id="mobile" name="mobile"           />
+                                               placeholder="支付宝账号" id="AlipayNo" name="AlipayNo"           />
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +184,7 @@
                                     <label class="col-sm-2 control-label">微信号:</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control"
-                                               placeholder="微信号" id="wechat" name="wechat"           />
+                                               placeholder="微信号" id="wechatNo" name="wechatNo"           />
                                     </div>
                                 </div>
                             </div>
@@ -266,10 +203,10 @@
 
 							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">微博号:</label>
+                                    <label class="col-sm-2 control-label">微博账号:</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control"
-                                               placeholder="微博号" id="microblog" name="microblog"           />
+                                               placeholder="微博账号" id="microblogNo" name="microblogNo"           />
                                     </div>
                                 </div>
                             </div>
@@ -277,28 +214,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">是否展示微博号:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="是否展示微博号" id="statusMicroblog" name="statusMicroblog"          />
-                                    </div>
-                                </div>
-                            </div>
 
 
 
@@ -310,10 +225,10 @@
 
 							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">简介:</label>
+                                    <label class="col-sm-2 control-label">芝麻信用:</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control"
-                                               placeholder="简介" id="profile" name="profile"           />
+                                               placeholder="芝麻信用" id="sesameNo" name="sesameNo"           />
                                     </div>
                                 </div>
                             </div>
@@ -321,50 +236,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">赞:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="赞" id="praise" name="praise"          />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">访客:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="访客" id="visitor" name="visitor"          />
-                                    </div>
-                                </div>
-                            </div>
 
 
 
@@ -376,10 +247,10 @@
 
 							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">访客ID:</label>
+                                    <label class="col-sm-2 control-label">技能编号:</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control"
-                                               placeholder="访客ID" id="visitorId" name="visitorId"           />
+                                               placeholder="技能编号" id="skillNo" name="skillNo"           />
                                     </div>
                                 </div>
                             </div>
@@ -398,14 +269,15 @@
 
 
 
-
-
-                            <div class="box-body">
+	                        <div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">活跃度:</label>
+                                    <label class="col-sm-2 control-label">手持身份证图片地址:</label>
                                     <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="活跃度" id="liveness" name="liveness"          />
+
+
+                                        <input class="file" type="file" id='identityHandImagesUrl'> <input
+                                            name="identityHandImagesUrl" id="identityHandImagesUrl_input" type="hidden" />
+                                        <div style="overflow: hidden;" class="identityHandImagesUrl"></div>
                                     </div>
                                 </div>
                             </div>
@@ -418,17 +290,22 @@
 
 
 
-							<div class="box-body">
+
+
+
+
+	                        <div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">授权:</label>
+                                    <label class="col-sm-2 control-label">身份证正面图片地址:</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="授权" id="auth" name="auth"           />
+
+
+                                        <input class="file" type="file" id='identityFrontImagesUrl'> <input
+                                            name="identityFrontImagesUrl" id="identityFrontImagesUrl_input" type="hidden" />
+                                        <div style="overflow: hidden;" class="identityFrontImagesUrl"></div>
                                     </div>
                                 </div>
                             </div>
-
-
 
 
 
@@ -503,12 +380,6 @@
                 });
 
 				 	var ue =  UE.getEditor('content');
-
-
-
-
-
-
 
 
 

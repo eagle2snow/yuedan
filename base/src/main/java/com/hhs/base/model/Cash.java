@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 /**
  * @Auther: Eagle
  * @Date: 2018/7/5 17:03
- * @Description: 取现
+ * @Description: 财务管理-提现
  */
 @Data
 @M("提现")

@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>客户信息列表 </title>
+<title>技能表列表 </title>
 
     <%@ include file="/common/admin/head.jsp"%>
 
@@ -23,7 +23,7 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-							<h3 class="box-title">客户信息列表</h3>
+							<h3 class="box-title">技能表列表</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box">
@@ -69,22 +69,21 @@
                                         <th width="25"><input name="checkAll" class="minimal" type="checkbox"></th>
                                         <th width="40">ID</th>
 											<th>名称</th>
-											<th>头像地址</th>
-											<th>性别</th>
-											<th>等级</th>
-											<th>积分</th>
-											<th>经度</th>
-											<th>纬度</th>
-											<th>手机号</th>
-											<th>微信号</th>
-											<th>微博号</th>
-											<th>是否展示微博号</th>
-											<th>简介</th>
-											<th>赞</th>
-											<th>访客</th>
-											<th>访客ID</th>
-											<th>活跃度</th>
-											<th>授权</th>
+											<th>会员</th>
+											<th>分类</th>
+											<th>咨询类型(品类)</th>
+											<th>技能相册</th>
+											<th>咨询对象</th>
+											<th>服务类型</th>
+											<th>服务擅长</th>
+											<th>服务介绍</th>
+											<th>教育经历</th>
+											<th>工作经历</th>
+											<th>专业回答</th>
+											<th>服务价格</th>
+											<th>派单状态</th>
+											<th>应邀数</th>
+											<th>审核状态</th>
                                         <th width="130">创建时间</th>
                                         <th width="100">状态</th>
                                         <th width="100">操作</th>
@@ -101,40 +100,37 @@
 											 <th>${model.name}</th>
 
 
-											<th class="text-center"><img src='${model.iocUrl}'
+											 <th>${model.client.name}</th>
+
+											 <th>${model.classesId}</th>
+
+											 <th>${model.categoryId}</th>
+
+											<th class="text-center"><img src='${model.skillImagesUrl}'
                                                                          style="width: 50pxp; height: 50px;"/></th>
 
 
+											 <th>${model.statusAdvisory}</th>
 
-											 <th>${model.gender}</th>
+											 <th>${model.type}</th>
 
-											 <th>${model.level}</th>
+											 <th>${model.adept}</th>
 
-											 <th>${model.integral}</th>
+											 <th>${model.introduce}</th>
 
-											 <th>${model.longitude}</th>
+											 <th>${model.educationId}</th>
 
-											 <th>${model.latitude}</th>
+											 <th>${model.workId}</th>
 
-											 <th>${model.mobile}</th>
+											 <th>${model.specialty}</th>
 
-											 <th>${model.wechat}</th>
+											 <th>${model.serviceMoney}</th>
 
-											 <th>${model.microblog}</th>
+											 <th>${model.statusSendOrder}</th>
 
-											 <th>${model.statusMicroblog}</th>
+											 <th>${model.totalInvitation}</th>
 
-											 <th>${model.profile}</th>
-
-											 <th>${model.praise}</th>
-
-											 <th>${model.visitor}</th>
-
-											 <th>${model.visitorId}</th>
-
-											 <th>${model.liveness}</th>
-
-											 <th>${model.auth}</th>
+											 <th>${model.statusCheck}</th>
 
                                             <td>
                                                 <javatime:format value="${model.createTime}"
@@ -218,7 +214,7 @@
 
     function edit(id) {
 		
-				openPerRe("编辑客户信息", 90, 90, '${adp}update/' + id + '.htm');
+				openPerRe("编辑技能表", 90, 90, '${adp}update/' + id + '.htm');
 
     }
 

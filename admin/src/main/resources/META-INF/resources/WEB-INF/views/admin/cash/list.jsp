@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>客户信息列表 </title>
+<title>提现列表 </title>
 
     <%@ include file="/common/admin/head.jsp"%>
 
@@ -23,7 +23,7 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-							<h3 class="box-title">客户信息列表</h3>
+							<h3 class="box-title">提现列表</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box">
@@ -69,22 +69,15 @@
                                         <th width="25"><input name="checkAll" class="minimal" type="checkbox"></th>
                                         <th width="40">ID</th>
 											<th>名称</th>
-											<th>头像地址</th>
-											<th>性别</th>
-											<th>等级</th>
-											<th>积分</th>
-											<th>经度</th>
-											<th>纬度</th>
-											<th>手机号</th>
-											<th>微信号</th>
-											<th>微博号</th>
-											<th>是否展示微博号</th>
-											<th>简介</th>
-											<th>赞</th>
-											<th>访客</th>
-											<th>访客ID</th>
-											<th>活跃度</th>
-											<th>授权</th>
+											<th>会员</th>
+											<th>持卡人</th>
+											<th>银行卡账号</th>
+											<th>银行名称</th>
+											<th>提现金额</th>
+											<th>服务费</th>
+											<th>状态</th>
+											<th>银行流水号</th>
+											<th>处理时间</th>
                                         <th width="130">创建时间</th>
                                         <th width="100">状态</th>
                                         <th width="100">操作</th>
@@ -101,40 +94,25 @@
 											 <th>${model.name}</th>
 
 
-											<th class="text-center"><img src='${model.iocUrl}'
-                                                                         style="width: 50pxp; height: 50px;"/></th>
+											 <th>${model.client.name}</th>
+
+											 <th>${model.cardUser}</th>
+
+											 <th>${model.cardNo}</th>
+
+											 <th>${model.cardName}</th>
+
+											 <th>${model.amount}</th>
+
+											 <th>${model.serviceCharge}</th>
+
+											 <th>${model.status}</th>
+
+											 <th>${model.flowNo}</th>
 
 
+											 <th>${model.dealTime}</th>
 
-											 <th>${model.gender}</th>
-
-											 <th>${model.level}</th>
-
-											 <th>${model.integral}</th>
-
-											 <th>${model.longitude}</th>
-
-											 <th>${model.latitude}</th>
-
-											 <th>${model.mobile}</th>
-
-											 <th>${model.wechat}</th>
-
-											 <th>${model.microblog}</th>
-
-											 <th>${model.statusMicroblog}</th>
-
-											 <th>${model.profile}</th>
-
-											 <th>${model.praise}</th>
-
-											 <th>${model.visitor}</th>
-
-											 <th>${model.visitorId}</th>
-
-											 <th>${model.liveness}</th>
-
-											 <th>${model.auth}</th>
 
                                             <td>
                                                 <javatime:format value="${model.createTime}"
@@ -218,7 +196,7 @@
 
     function edit(id) {
 		
-				openPerRe("编辑客户信息", 90, 90, '${adp}update/' + id + '.htm');
+				openPerRe("编辑提现", 90, 90, '${adp}update/' + id + '.htm');
 
     }
 
