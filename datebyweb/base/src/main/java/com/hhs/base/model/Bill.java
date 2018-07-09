@@ -11,12 +11,12 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * @Auther: Eagle
  * @Date: 2018/7/5 16:19
- * @Description: 客户账单实体类
+ * @Description: 财务管理-客户账单实体类
  */
 @Data
 @M("客户账单")
@@ -47,7 +47,7 @@ public class Bill extends Model{
 
     @JSONField(format = "yyyy-MM-dd HH:mm:ss", label = "收入时间")
     @FormField(type = FieldType.TIME, label = "收入时间")
-    private Date incomeTime;
+    private LocalDateTime incomeTime;
 
     @FormField(type = FieldType.TEXTINPUT, label = "支出金额")
     private BigDecimal expenditure = BigDecimal.ZERO;
@@ -57,7 +57,7 @@ public class Bill extends Model{
 
     @JSONField(format = "yyyy-MM-dd HH:mm:ss", label = "支出时间")
     @FormField(type = FieldType.TIME, label = "支出时间")
-    private Date expenditureTime;
+    private LocalDateTime expenditureTime;
 
     @FormField(type = FieldType.RADIO, label = "支付状态")
     private Integer statusPay;

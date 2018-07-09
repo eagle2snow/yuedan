@@ -10,12 +10,13 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
  * @Auther: Eagle
  * @Date: 2018/7/9 09:18
- * @Description: 充值实体类
+ * @Description: 财务管理-充值实体类
  */
 @Data
 @M("充值")
@@ -31,6 +32,15 @@ public class Recharge extends Model{
 
     @FormField(type = FieldType.NUMBER, label = "支付方式", data = "1|余额支付,2|微信支付,3|支付宝支付")
     private Integer payPathway;
+
+    @FormField(type = FieldType.NUMBER, label = "充值金额")
+    private BigDecimal totalMoney = BigDecimal.ZERO;
+
+    @FormField(type = FieldType.NUMBER, label = "金币数")
+    private Integer goldNumber;
+
+    @FormField(type = FieldType.NUMBER, label = "砖石数")
+    private Integer masonryNumber;
 
     @FormField(type = FieldType.TIME, label = "充值时间")
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")

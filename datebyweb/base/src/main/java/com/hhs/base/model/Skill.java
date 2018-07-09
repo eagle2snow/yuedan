@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 /**
  * @Auther: Eagle
  * @Date: 2018/7/5 11:20
- * @Description: 客户技能实体类
+ * @Description: 技能管理-客户技能实体类
  */
 @Data
 @M("技能表")

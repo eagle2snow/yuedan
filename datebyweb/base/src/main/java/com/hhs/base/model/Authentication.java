@@ -13,7 +13,7 @@ import javax.persistence.Table;
 /**
  * @Auther: Eagle
  * @Date: 2018/7/6 10:10
- * @Description: 客户认证
+ * @Description: 认证管理-客户认证
  */
 @Data
 @M("客户认证")

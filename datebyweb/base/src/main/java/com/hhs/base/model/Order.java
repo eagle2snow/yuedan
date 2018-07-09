@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 /**
  * @Auther: Eagle
  * @Date: 2018/7/5 09:49
- * @Description: 订单实体类
+ * @Description: 订单管理-订单实体类
  */
 @Data
 @M("订单表")
