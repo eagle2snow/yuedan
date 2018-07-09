@@ -63,6 +63,19 @@ public class Order extends Model {
     @FormField(type = FieldType.NUMBER, label = "订单总价")
     private BigDecimal totalMoney = BigDecimal.ZERO;
 
+    @FormField(type = FieldType.NUMBER, label = "支付方式", data = "1|余额支付,2|微信支付,3|支付宝支付")
+    private Integer payPathway;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "支付宝交易号")
+    private String alipayNo;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "微信交易号")
+    private String wechatNo;
+
+    @FormField(type = FieldType.TIME, label = "支付时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime payTime;
+
     @FormField(type = FieldType.TIME, label = "预约时间")
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime appointmentTime;
@@ -77,6 +90,38 @@ public class Order extends Model {
 
     @FormField(type = FieldType.TEXTINPUT, label = "应邀优势")
     private String advantage;
+
+    @FormField(type = FieldType.TIME, label = "付款时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime paymentTime;
+
+    @FormField(type = FieldType.TIME, label = "订单完成时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime finishTime;
+
+    @FormField(type = FieldType.NUMBER, label = "是否已评价", data = "0|未评价,1|已评价")
+    private Integer appraise = 0;
+
+    @FormField(type = FieldType.TIME, label = "评价时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime appraiseTime;
+
+    @FormField(type = FieldType.NUMBER, label = "退款金额")
+    private BigDecimal orderRefundTime = BigDecimal.ZERO;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "退款理由")
+    private String refundReason;
+
+    @FormField(type = FieldType.TIME, label = "退款时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime refundTime;
+
+    @FormField(type = FieldType.TEXTINPUT, label = "拒绝退款")
+    private String rejectReason;
+
+    @FormField(type = FieldType.TIME, label = "拒退时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime rejectTime;
 
     @FormField(type = FieldType.TEXTINPUT, label = "备注")
     private String remarks;
