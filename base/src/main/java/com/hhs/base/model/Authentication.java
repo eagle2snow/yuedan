@@ -17,8 +17,8 @@ import javax.persistence.Table;
  */
 @Data
 @M("客户认证")
+@Table(name = "t_authentication")
 @Entity(name = "authentication")
-@Table(name = "t_ authentication")
 public class Authentication extends Model {
 
     @FormField(type = FieldType.SELECT, label = "会员", dataNature = DataNature.MODEL, ds = Client.class)
@@ -28,7 +28,7 @@ public class Authentication extends Model {
     private String phoneNo;
 
     @FormField(type = FieldType.RADIO, label = "身份证明", data = "1|身份证,2|护照,3|港澳通行证")
-    private String identityType;
+    private Integer identityType;
 
     @FormField(type = FieldType.TEXTINPUT, label = "身份证号")
     private String identityNo;
@@ -62,5 +62,4 @@ public class Authentication extends Model {
     public void setClient(Client client) {
         this.client = client;
     }
-
 }

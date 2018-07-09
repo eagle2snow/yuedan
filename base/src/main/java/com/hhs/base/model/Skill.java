@@ -68,12 +68,12 @@ public class Skill extends Model {
     @FormField(type = FieldType.RADIO, label = "派单状态", data = "1|接受派单,2|不接派单")
     private Integer statusSendOrder;
 
-    @FormField(type = FieldType.RADIO, label = "应邀数")
+    @FormField(type = FieldType.NUMBER, label = "应邀数")
     private Integer totalInvitation;
 
 
 
-    @FormField(type = FieldType.RADIO, label = "审核状态", data = "1|待完善，2|审核中,3|已驳回,4|已通过")
+    @FormField(type = FieldType.RADIO, label = "审核状态", data = "1|待完善,2|审核中,3|已驳回,4|已通过")
     private Integer statusCheck;
 
 
