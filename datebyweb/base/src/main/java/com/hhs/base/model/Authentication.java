@@ -63,5 +63,4 @@ public class Authentication extends Model {
         this.client = client;
     }
 
-
 }
