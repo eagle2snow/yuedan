@@ -10,9 +10,11 @@ spring:
       suffix: .jsp
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/bar?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+#    url: jdbc:mysql://localhost:3306/bar?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
+    url: jdbc:mysql://47.106.36.3:3306/yddb?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2b8
     username: root
-    password: root0tt
+    password: Sge%5ej5De6z
+#    password: root0tt
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     database: mysql
