@@ -22,6 +22,12 @@ public class CreateCode {
 //			Build.buildCode(Order.class, null);
 //			Build.buildCode(Recharge.class, null);
 //			Build.buildCode(Skill.class, null);
+//            Build.buildCode(Authentication.class, "list");
+//			Build.buildCode(Bill.class, "list");
+//			Build.buildCode(Cash.class, "list");
+//			Build.buildCode(Order.class, "list");
+//			Build.buildCode(Recharge.class, "list");
+//			Build.buildCode(Skill.class, "list");
         } catch (Exception e) {
             e.printStackTrace();
         }

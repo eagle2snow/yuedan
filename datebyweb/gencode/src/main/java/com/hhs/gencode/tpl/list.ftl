@@ -83,7 +83,7 @@
                                             </#list>
                                         <th width="130">创建时间</th>
                                         <th width="100">状态</th>
-                                        <th width="100">操作</th>
+                                        <th width="100">修改|删除</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -133,7 +133,7 @@
                                             </td>
                                             <td>
                                                 <button onclick="edit(${r"${model.id}"})"
-                                                        class="btn btn-sm btn-primary"><i
+                                                        class="btn btn-sm btn-warning"><i
                                                         class="glyphicon glyphicon-pencil" title="修改"></i></button>
                                                 <button onclick="del(${r"${model.id}"})" class="btn btn-sm btn-danger">
                                                     <i class="glyphicon glyphicon-trash" title="删除"></i></button>
