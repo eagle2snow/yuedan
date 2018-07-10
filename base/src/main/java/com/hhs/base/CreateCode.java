@@ -14,7 +14,7 @@ public class CreateCode {
         // Build.buildCode(AutoMsgType.class, null);
         // Build.buildCode(TestTime.class, "update");
         try {
-//			Build.buildCode(Foo.class, null);
+//			Build.buildCode(Dynamic.class, null);
 //			Build.buildCode(Client.class, null);
 //			Build.buildCode(Authentication.class, null);
 //			Build.buildCode(Bill.class, null);

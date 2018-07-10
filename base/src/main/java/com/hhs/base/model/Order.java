@@ -75,7 +75,7 @@ public class Order extends Model {
     @FormField(type = FieldType.TEXTINPUT, label = "应邀优势")
     private String advantage;
 
-    @FormField(type = FieldType.NUMBER, label = "是否已评价", data = "0|未评价,1|已评价")
+    @FormField(type = FieldType.RADIO, label = "是否已评价", data = "0|未评价,1|已评价")
     private Integer appraise = 0;
 
     @FormField(type = FieldType.NUMBER, label = "退款金额")
