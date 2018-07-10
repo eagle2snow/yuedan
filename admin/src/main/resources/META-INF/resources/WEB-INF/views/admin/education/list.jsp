@@ -4,7 +4,7 @@
 <html>
 
 <head>
-<title>技能表列表 </title>
+<title>教育列表 </title>
 
     <%@ include file="/common/admin/head.jsp"%>
 
@@ -23,7 +23,7 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-							<h3 class="box-title">技能表列表</h3>
+							<h3 class="box-title">教育列表</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box">
@@ -69,20 +69,9 @@
                                         <th width="25"><input name="checkAll" class="minimal" type="checkbox"></th>
                                         <th width="40">ID</th>
 											<th>名称</th>
-											<th>会员</th>
-											<th>菜单</th>
-											<th>教育</th>
-											<th>工作</th>
-											<th>技能相册</th>
-											<th>咨询对象</th>
-											<th>服务类型</th>
-											<th>服务擅长</th>
-											<th>服务介绍</th>
-											<th>专业回答</th>
-											<th>服务价格</th>
-											<th>派单状态</th>
-											<th>应邀数</th>
-											<th>审核状态</th>
+											<th>学历层次</th>
+											<th>开学时间</th>
+											<th>结束时间</th>
                                         <th width="130">创建时间</th>
                                         <th width="100">状态</th>
                                         <th width="100">修改|删除</th>
@@ -99,35 +88,11 @@
 											 <th>${model.name}</th>
 
 
-											 <th>${model.client.name}</th>
+											 <th>${model.level}</th>
 
-											 <th>${model.classify.name}</th>
+											 <th>${model.startTime}</th>
 
-											 <th>${model.education.name}</th>
-
-											 <th>${model.work.name}</th>
-
-											<th class="text-center"><img src='${model.skillImagesUrl}'
-                                                                         style="width: 50pxp; height: 50px;"/></th>
-
-
-											 <th>${model.statusAdvisory}</th>
-
-											 <th>${model.type}</th>
-
-											 <th>${model.adept}</th>
-
-											 <th>${model.introduce}</th>
-
-											 <th>${model.specialty}</th>
-
-											 <th>${model.serviceMoney}</th>
-
-											 <th>${model.statusSendOrder}</th>
-
-											 <th>${model.totalInvitation}</th>
-
-											 <th>${model.statusCheck}</th>
+											 <th>${model.endTime}</th>
 
                                             <td>
                                                 <javatime:format value="${model.createTime}"
@@ -211,7 +176,7 @@
 
     function edit(id) {
 		
-				openPerRe("编辑技能表", 90, 90, '${adp}update/' + id + '.htm');
+				openPerRe("编辑教育", 90, 90, '${adp}update/' + id + '.htm');
 
     }
 

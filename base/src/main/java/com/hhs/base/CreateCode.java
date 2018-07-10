@@ -22,6 +22,8 @@ public class CreateCode {
 //			Build.buildCode(Order.class, null);
 //			Build.buildCode(Recharge.class, null);
 //			Build.buildCode(Skill.class, null);
+//			Build.buildCode(Education.class, null);
+//			Build.buildCode(Work.class, null);
 //            Build.buildCode(Authentication.class, "list");
 //			Build.buildCode(Bill.class, "list");
 //			Build.buildCode(Cash.class, "list");
