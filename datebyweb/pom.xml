@@ -15,6 +15,7 @@
         <module>admin</module>
         <module>utils</module>
         <module>service</module>
+        <module>backend</module>
     </modules>
 
     <parent>
