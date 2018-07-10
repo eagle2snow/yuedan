@@ -5,11 +5,17 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import {appRoutes} from "./app.routes";
 import { HomeComponent } from './home/home.component';
+import { SkillComponent } from './skill/skill.component';
+import { PersonalComponent } from './personal/personal.component';
+import { NeedsComponent } from './needs/needs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SkillComponent,
+    PersonalComponent,
+    NeedsComponent
   ],
   imports: [
     BrowserModule,
