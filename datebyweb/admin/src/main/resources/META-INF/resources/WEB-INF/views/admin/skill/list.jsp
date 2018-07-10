@@ -70,15 +70,14 @@
                                         <th width="40">ID</th>
 											<th>名称</th>
 											<th>会员</th>
-											<th>分类</th>
-											<th>咨询类型(品类)</th>
+											<th>菜单</th>
+											<th>教育</th>
+											<th>工作</th>
 											<th>技能相册</th>
 											<th>咨询对象</th>
 											<th>服务类型</th>
 											<th>服务擅长</th>
 											<th>服务介绍</th>
-											<th>教育经历</th>
-											<th>工作经历</th>
 											<th>专业回答</th>
 											<th>服务价格</th>
 											<th>派单状态</th>
@@ -102,9 +101,11 @@
 
 											 <th>${model.client.name}</th>
 
-											 <th>${model.classesId}</th>
+											 <th>${model.classify.name}</th>
 
-											 <th>${model.categoryId}</th>
+											 <th>${model.education.name}</th>
+
+											 <th>${model.work.name}</th>
 
 											<th class="text-center"><img src='${model.skillImagesUrl}'
                                                                          style="width: 50pxp; height: 50px;"/></th>
@@ -117,10 +118,6 @@
 											 <th>${model.adept}</th>
 
 											 <th>${model.introduce}</th>
-
-											 <th>${model.educationId}</th>
-
-											 <th>${model.workId}</th>
 
 											 <th>${model.specialty}</th>
 

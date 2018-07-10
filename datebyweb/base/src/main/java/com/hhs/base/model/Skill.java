@@ -25,11 +25,14 @@ public class Skill extends Model {
     @FormField(type = FieldType.SELECT, label = "会员", dataNature = DataNature.MODEL, ds = Client.class)
     private Client client;
 
-    @FormField(type = FieldType.NUMBER, label = "分类")
-    private Integer classesId;
+    @FormField(type = FieldType.SELECT, label = "菜单", dataNature = DataNature.MODEL, ds = Classify.class)
+    private Classify classify;
 
-    @FormField(type = FieldType.NUMBER, label = "咨询类型(品类)")
-    private Integer categoryId;
+    @FormField(type = FieldType.SELECT, label = "教育", dataNature = DataNature.MODEL, ds = Education.class)
+    private Education education;
+
+    @FormField(type = FieldType.SELECT, label = "工作", dataNature = DataNature.MODEL, ds = Work.class)
+    private Work work;
 
     @FormField(type = FieldType.PICTURE, label = "技能相册")
     private String skillImagesUrl;
@@ -49,21 +52,11 @@ public class Skill extends Model {
     @FormField(type = FieldType.TEXTINPUT, label = "服务介绍")
     private String introduce;
 
-    @FormField(type = FieldType.TEXTINPUT, label = "教育经历")
-    private String educationId;
-
-    @FormField(type = FieldType.TEXTINPUT, label = "工作经历")
-    private String workId;
-
     @FormField(type = FieldType.TEXTINPUT, label = "专业回答")
     private String specialty;
 
-
-
     @FormField(type = FieldType.NUMBER, label = "服务价格")
     private BigDecimal serviceMoney = BigDecimal.ZERO;
-
-
 
     @FormField(type = FieldType.RADIO, label = "派单状态", data = "1|接受派单,2|不接派单")
     private Integer statusSendOrder;
@@ -71,11 +64,8 @@ public class Skill extends Model {
     @FormField(type = FieldType.NUMBER, label = "应邀数")
     private Integer totalInvitation;
 
-
-
     @FormField(type = FieldType.RADIO, label = "审核状态", data = "1|待完善,2|审核中,3|已驳回,4|已通过")
     private Integer statusCheck;
-
 
     @ManyToOne
     public Client getClient() {
@@ -86,4 +76,30 @@ public class Skill extends Model {
         this.client = client;
     }
 
+    @ManyToOne
+    public Classify getClassify() {
+        return classify;
+    }
+
+    public void setClassify(Classify classify) {
+        this.classify = classify;
+    }
+
+    @ManyToOne
+    public Education getEducation() {
+        return education;
+    }
+
+    public void setEducation(Education education) {
+        this.education = education;
+    }
+
+    @ManyToOne
+    public Work getWork() {
+        return work;
+    }
+
+    public void setWork(Work work) {
+        this.work = work;
+    }
 }

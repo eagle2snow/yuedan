@@ -94,15 +94,24 @@
 
 
 
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">分类:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="分类" id="classesId" name="classesId"          />
-                                    </div>
-                                </div>
-                            </div>
+
+
+
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">菜单:</label>
+                          <div class="col-sm-8">
+											<select name="classify.id" style="width: 100% !important;" class="form-control select2" id="classify">
+                                      <c:forEach items="${classifyList}" var="m">
+
+                              <option value="${m.id}">
+                                  ${m.name}
+													</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
+								</div>
 
 
 
@@ -116,18 +125,49 @@
 
 
 
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">咨询类型(品类):</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control"
-                                               placeholder="咨询类型(品类)" id="categoryId" name="categoryId"          />
-                                    </div>
-                                </div>
-                            </div>
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">教育:</label>
+                          <div class="col-sm-8">
+											<select name="education.id" style="width: 100% !important;" class="form-control select2" id="education">
+                                      <c:forEach items="${educationList}" var="m">
+
+                              <option value="${m.id}">
+                                  ${m.name}
+													</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
+								</div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+								<div class="box-body">
+                                  <div class="form-group">
+                                  <label class="col-sm-2 control-label">工作:</label>
+                          <div class="col-sm-8">
+											<select name="work.id" style="width: 100% !important;" class="form-control select2" id="work">
+                                      <c:forEach items="${workList}" var="m">
+
+                              <option value="${m.id}">
+                                  ${m.name}
+													</option>
+												</c:forEach>
+											</select>
+										</div>
+									</div>
+								</div>
 
 
 
@@ -249,50 +289,6 @@
 
 							<div class="box-body">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">教育经历:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="教育经历" id="educationId" name="educationId"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">工作经历:</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control"
-                                               placeholder="工作经历" id="workId" name="workId"           />
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<div class="box-body">
-                                <div class="form-group">
                                     <label class="col-sm-2 control-label">专业回答:</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control"
@@ -361,19 +357,21 @@
 
 
 
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">应邀数:</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control"
+                                               placeholder="应邀数" id="totalInvitation" name="totalInvitation"          />
+                                    </div>
+                                </div>
+                            </div>
 
 
 
 
 
 
-								<div class="box-body">
-                                  <div class="form-group">
-                                  <label class="col-sm-2 control-label">应邀数:</label>
-                          <div class="col-sm-8">
-										</div>
-									</div>
-								</div>
 
 
 
@@ -391,7 +389,8 @@
                                   <div class="form-group">
                                   <label class="col-sm-2 control-label">审核状态:</label>
                           <div class="col-sm-8">
-											<label><input value="1" type="radio" class="minimal" name="statusCheck">待完善，2</label>
+											<label><input value="1" type="radio" class="minimal" name="statusCheck">待完善</label>
+											<label><input value="2" type="radio" class="minimal" name="statusCheck">审核中</label>
 											<label><input value="3" type="radio" class="minimal" name="statusCheck">已驳回</label>
 											<label><input value="4" type="radio" class="minimal" name="statusCheck">已通过</label>
 										</div>
@@ -463,7 +462,6 @@
                 });
 
 				 	var ue =  UE.getEditor('content');
-
 
 
 
