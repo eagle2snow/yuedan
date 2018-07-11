@@ -37,4 +37,7 @@ public class Constant {
     public static final String password = "wsB7sX83zy";// 企业密码
     public static final String action = "send";// 发送任务命令
     public static final String sMSApiUrl = "http://211.147.242.161:8888/v2sms.aspx";// 发送任务命令
+
+    // 以下为系统需要的其他常量
+    public static final String verificationCode2Session = "";// 验证码
 }
