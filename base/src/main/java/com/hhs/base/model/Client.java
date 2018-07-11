@@ -52,6 +52,9 @@ public class Client extends Model{
     @FormField(type = FieldType.TEXTINPUT, label = "微信号")
     private String wechat;
 
+    @FormField(type = FieldType.TEXTINPUT, label = "微信开发ID")
+    private String openid;
+
     @FormField(type = FieldType.TEXTINPUT, label = "微博号")
     private String microblog;
 

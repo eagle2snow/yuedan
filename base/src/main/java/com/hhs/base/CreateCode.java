@@ -30,6 +30,7 @@ public class CreateCode {
 //			Build.buildCode(Order.class, "list");
 //			Build.buildCode(Recharge.class, "list");
 //			Build.buildCode(Skill.class, "list");
+//			Build.buildCode(PayBill.class, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
