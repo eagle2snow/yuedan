@@ -9,7 +9,7 @@ import { SkillComponent } from './skill/skill.component';
 import { PersonalComponent } from './personal/personal.component';
 import { NeedsComponent } from './needs/needs.component';
 import { ToolComponent } from './tool/tool.component';
-// import { ToolComponent } from './tool/tool.component';
+import { DemandComponent } from "./demand/demand.component";
 
 @NgModule({
   declarations: [
@@ -18,8 +18,8 @@ import { ToolComponent } from './tool/tool.component';
     SkillComponent,
     PersonalComponent,
     NeedsComponent,
+    DemandComponent,
     ToolComponent,
-    // ToolComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
+declare var TouchSlide;
+
 @Component({
   selector: 'app-tool',
   templateUrl: './tool.component.html',
@@ -11,12 +13,14 @@ export class ToolComponent implements OnInit {
   }
 
   ngOnInit() {
-
     document.addEventListener("touchstart", function () {
     }, true);
     var $$ = document.querySelectorAll.bind(document);
-    Element.prototype.on = Element.prototype.addEventListener;
-    Element.prototype.off = Element.prototype.removeEventListener;
+    const helpElememt = (e) => {
+      e.prototype.on = e.prototype.addEventListener;
+      e.prototype.off = e.prototype.removeEventListener;
+    };
+    helpElememt(Element);
     var ForEach = function (array, fn) {
       [].forEach.call(array, fn);
     };
@@ -28,41 +32,41 @@ export class ToolComponent implements OnInit {
     var sticky = CSS.supports("position", "sticky") || CSS.supports("position", "-webkit-sticky");
 
 // slide
-    var TouchSlide:any = (<any>window).TouchSlide();
-
-    if (typeof TouchSlide == "function") {
-      const focusBn = function(cell) {
-        TouchSlide({
-          slideCell: cell,
-          titCell: ".hd",
-          mainCell: ".bd",
-          effect: "leftLoop",
-          autoPlay: true,
-          autoPage: true,
-          delayTime: 500,
-          interTime: 5000
-        });
-      };
-      focusBn("#ibn");
-      //
-      const TabSlide = function(cell, cellbd, page) {
-        TouchSlide({
-          slideCell: cell,
-          defaultIndex: page,
-          endFun: function (i) { //高度自适应
-            var bd = document.getElementById(cellbd);
-            bd.parentNode.style.height = bd.children[i].children[0].offsetHeight + "px";
-            if (i > 0) bd.parentNode.style.transition = "200ms";//添加动画效果
-          }
-        });
-      }
-      TabSlide("#tabBox", "tabBox-bd", 0);
-      TabSlide("#tabBox-page02", "tabBox-bd", 1);
-    }
+    const focusBn = function (cell) {
+      TouchSlide({
+        slideCell: cell,
+        titCell: ".hd",
+        mainCell: ".bd",
+        effect: "leftLoop",
+        autoPlay: true,
+        autoPage: true,
+        delayTime: 500,
+        interTime: 5000
+      });
+    };
+    focusBn("#ibn");
+    //
+    const TabSlide = function (cell, cellbd, page) {
+      TouchSlide({
+        slideCell: cell,
+        defaultIndex: page,
+        endFun: function (i) { //高度自适应
+          const bd = document.getElementById(cellbd);
+          const helpBd = (b) => {
+            b.parentNode.style.height = b.children[i].children[0].offsetHeight + "px";
+            if (i > 0) {//添加动画效果
+              b.parentNode.style.transition = "200ms";
+            }
+          };
+          helpBd(bd);
+        }
+      });
+    };
+    TabSlide("#tabBox", "tabBox-bd", 0);
+    TabSlide("#tabBox-page02", "tabBox-bd", 1);
 // end slide
 
     var $$html = document.querySelector("html");
-    var $$body = document.querySelector("body");
     var header = document.getElementById("header");
 
 
@@ -87,7 +91,11 @@ export class ToolComponent implements OnInit {
         ;
         ForEach(sortbarHditem, function (el) {
           el.addEventListener("click", function () {
-            document.documentElement.scrollTop = window.pageYOffset = document.body.scrollTop = sortbarTop;
+            const helpWy = (w, v) => {
+              w.pageYOffset = v;
+            };
+            helpWy(window, sortbarTop);
+            document.documentElement.scrollTop = document.body.scrollTop = sortbarTop;
             if (this.classList.contains("hasftsort")) {
               removeSiblingClass(this, "active");
               sortbarWrap.classList.remove("show");
@@ -174,7 +182,7 @@ export class ToolComponent implements OnInit {
           _thsHeight = _ths.clientHeight,
           _thsTop = getOffset(_ths).top;
 
-        const scrollfn = function(offtop) {
+        const scrollfn = function (offtop) {
           if (offtop > _thsTop) {
             $$html.classList.add("navfixed");
             if (offtop > _thsTop + _thsHeight) {
@@ -290,7 +298,10 @@ export class ToolComponent implements OnInit {
     function nohscorll(elm) {
       var $$html = document.querySelector("html");
       $$html.classList.add("noscorll");
-      $$html.on("touchmove", disableScroll);
+      const helpOn = (h) => {
+        h.on("touchmove", disableScroll);
+      };
+      helpOn($$html);
       elm != null ? elm.on("touchmove", function (e) {
         e.stopPropagation()
       }) : 0;
@@ -299,20 +310,20 @@ export class ToolComponent implements OnInit {
     function hscorll() {
       var $$html = document.querySelector("html");
       $$html.classList.remove("noscorll");
-      $$html.off("touchmove", disableScroll);
+      const helpOff = (h) => {
+        h.off("touchmove", disableScroll);
+      };
+      helpOff($$html);
     }
-
 
     function removeSiblingClass(obj, cls) {
       Array.prototype.filter.call(obj.parentNode.children, function (child) {
         if (child !== obj) {
           child.classList.remove(cls);
         }
-        ;
         obj.classList.add(cls);
       });
     }
-
 //
     function radioClass(el, cls) {
       ForEach(el.parentNode.children, function (sib) {
@@ -328,7 +339,6 @@ export class ToolComponent implements OnInit {
         });
       });
     }
-
 //
 
 // 设置css
