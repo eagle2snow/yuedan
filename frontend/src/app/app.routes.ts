@@ -2,7 +2,7 @@ import {Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {PersonalComponent} from "./personal/personal.component";
 import {SkillComponent} from "./skill/skill.component";
-import {NeedsComponent} from "./needs/needs.component";
+import {DemandComponent} from "./demand/demand.component";
 
 export const appRoutes: Routes = [
   {
@@ -23,7 +23,7 @@ export const appRoutes: Routes = [
     component: SkillComponent
   },
   {
-    path: 'ang/needs',
-    component: NeedsComponent
+    path: 'ang/demand',
+    component: DemandComponent
   }
 ];

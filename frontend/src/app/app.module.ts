@@ -1,15 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {appRoutes} from "./app.routes";
-import { HomeComponent } from './home/home.component';
-import { SkillComponent } from './skill/skill.component';
-import { PersonalComponent } from './personal/personal.component';
-import { NeedsComponent } from './needs/needs.component';
-import { ToolComponent } from './tool/tool.component';
-import { DemandComponent } from "./demand/demand.component";
+import {SkillComponent} from './skill/skill.component';
+import {PersonalComponent} from './personal/personal.component';
+import {ToolComponent} from './tool/tool.component';
+import {AppComponent} from "./app.component";
+import {HomeComponent} from "./home/home.component";
+import { DemandComponent } from './demand/demand.component';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +17,8 @@ import { DemandComponent } from "./demand/demand.component";
     HomeComponent,
     SkillComponent,
     PersonalComponent,
-    NeedsComponent,
-    DemandComponent,
     ToolComponent,
+    DemandComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,4 +28,5 @@ import { DemandComponent } from "./demand/demand.component";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
