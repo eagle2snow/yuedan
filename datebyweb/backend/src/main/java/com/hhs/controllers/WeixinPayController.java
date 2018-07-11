@@ -52,7 +52,7 @@ public class WeixinPayController extends WeixinBaseController {
      * @return
      */
     @ResponseBody
-    @RequestMapping("/prePayOrder")
+    @RequestMapping("prePayOrder")
     public Map<String, Object> prePay(String orderNo, String orderName, BigDecimal amount) {
         log.info("prepay:The pay start,ages is orderNo={},orderName={},amount={}", orderNo, orderName, amount);
 
@@ -89,7 +89,7 @@ public class WeixinPayController extends WeixinBaseController {
         return map;
     }
 
-    @RequestMapping("/prePayCombo")
+    @RequestMapping("prePayCombo")
     @ResponseBody
     public Map<String, Object> prePayCombo(Integer choosed)
     {
@@ -156,7 +156,7 @@ public class WeixinPayController extends WeixinBaseController {
     }
 
 
-    @PostMapping(value = "/paySuccess", produces = "text/html;charset=utf-8")
+    @PostMapping(value = "paySuccess", produces = "text/html;charset=utf-8")
     @ResponseBody
     public String WeixinParentNotifyPage(HttpServletRequest request) throws Exception {
 
