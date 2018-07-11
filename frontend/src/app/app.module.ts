@@ -8,8 +8,10 @@ import {PersonalComponent} from './personal/personal.component';
 import {ToolComponent} from './tool/tool.component';
 import {AppComponent} from "./app.component";
 import {HomeComponent} from "./home/home.component";
-import { DemandComponent } from './demand/demand.component';
-
+import {DemandComponent} from './demand/demand.component';
+import {SpaComponent} from './home/spa/spa.component';
+import {NavibarComponent} from './navibar/navibar.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,9 +21,13 @@ import { DemandComponent } from './demand/demand.component';
     PersonalComponent,
     ToolComponent,
     DemandComponent,
+    SpaComponent,
+    NavibarComponent,
+
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule,
     RouterModule.forRoot(appRoutes)
   ],
