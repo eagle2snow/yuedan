@@ -28,8 +28,10 @@ export class ToolComponent implements OnInit {
     var sticky = CSS.supports("position", "sticky") || CSS.supports("position", "-webkit-sticky");
 
 // slide
+    var TouchSlide:any = (<any>window).TouchSlide();
+
     if (typeof TouchSlide == "function") {
-      function focusBn(cell) {
+      const focusBn = function(cell) {
         TouchSlide({
           slideCell: cell,
           titCell: ".hd",
@@ -40,10 +42,10 @@ export class ToolComponent implements OnInit {
           delayTime: 500,
           interTime: 5000
         });
-      }
+      };
       focusBn("#ibn");
       //
-      function TabSlide(cell, cellbd, page) {
+      const TabSlide = function(cell, cellbd, page) {
         TouchSlide({
           slideCell: cell,
           defaultIndex: page,
@@ -54,7 +56,7 @@ export class ToolComponent implements OnInit {
           }
         });
       }
-      TabSlide("#tabBox", "tabBox-bd");
+      TabSlide("#tabBox", "tabBox-bd", 0);
       TabSlide("#tabBox-page02", "tabBox-bd", 1);
     }
 // end slide
@@ -172,18 +174,16 @@ export class ToolComponent implements OnInit {
           _thsHeight = _ths.clientHeight,
           _thsTop = getOffset(_ths).top;
 
-        function scrollfn(offtop) {
+        const scrollfn = function(offtop) {
           if (offtop > _thsTop) {
             $$html.classList.add("navfixed");
             if (offtop > _thsTop + _thsHeight) {
               $$html.classList.remove("navfixed");
             }
-            ;
           } else {
             $$html.classList.remove("navfixed");
           }
-        }
-
+        };
         if (!sticky) {
           window.addEventListener("scroll", function () {
             var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -278,7 +278,6 @@ export class ToolComponent implements OnInit {
         }
         window.setTimeout(this.scroll.bind(this), speed);
       }
-      ;
     }
 
     document.addEventListener("DOMContentLoaded", function () {
