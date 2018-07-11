@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { SkillComponent } from './skill/skill.component';
 import { PersonalComponent } from './personal/personal.component';
 import { NeedsComponent } from './needs/needs.component';
+import { ToolComponent } from './tool/tool.component';
+// import { ToolComponent } from './tool/tool.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { NeedsComponent } from './needs/needs.component';
     HomeComponent,
     SkillComponent,
     PersonalComponent,
-    NeedsComponent
+    NeedsComponent,
+    ToolComponent,
+    // ToolComponent
   ],
   imports: [
     BrowserModule,
